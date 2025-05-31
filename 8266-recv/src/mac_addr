@@ -1,0 +1,13 @@
+#!/bin/bash
+# read MAC address from OTP ROM and echo to monitor.
+# Extracts the device MAC address using esptool.py command
+# Connect PC terminal to USB port and invoke the bash script.
+# 
+port=/dev/ttyUSB0
+esptool.py  \
+         --port $port           \
+         --baud 9600          \
+         --after  no_reset      \
+         read_mac
+echo done reading MAC address
+
